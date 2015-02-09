@@ -29,12 +29,10 @@ app.use(express.bodyParser());    // Middleware for reading request body
 //Gift
 app.get('/gift', function(req, res) {
    
-  Parse.Cloud.run("getFirstPost", {}, {
-    success: function(result) {
-        var title = result.get("title");
-        var content = result.get("content");
-        var jsonContent = "title:" + title + "content:" + content;
-      res.render('gift', { title: title, content: content});
+  Parse.Cloud.run("getPosts", {}, {
+    success: function(results) {
+      res.render('gift', {posts: results});
+      
     },
     error: function(error) {
       res.send("some error");

@@ -2,9 +2,16 @@
 <html>
   <head>
     <title>Gift</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
-    <p style="font-weight:bold; font-size:200%"><%= title %></p>
-    <p style="font-weight:normal; font-size:100%"><%= content %></p>
+	<h1>送给父母的礼物</h1>
+	<div>
+    	<% for(var i=0; i<posts.length; i++) { %>
+        <p style="font-weight:bold; font-size:200%"><%= posts[i].get("title") %></p>
+    	<p style="font-weight:normal; font-size:100%"><%= posts[i].get("content") %></p>
+    <% } %>
+	</div>
+    
   </body>
 </html>

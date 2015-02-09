@@ -6,11 +6,10 @@
 require('cloud/app.js');
  
 /**
- * getFirstPost
- *
+ * getPosts
  *
  */
-Parse.Cloud.define("getFirstPost", function(request, status) {
+Parse.Cloud.define("getPosts", function(request, status) {
    
     var Posts = Parse.Object.extend("Posts");
     var query = new Parse.Query(Posts);
@@ -23,8 +22,7 @@ Parse.Cloud.define("getFirstPost", function(request, status) {
             };
  
             // Has post
-            var firsPost = results[0];
-            status.success(firsPost);
+            status.success(results);
         },
         error: function(error) {
             status.error(error);
