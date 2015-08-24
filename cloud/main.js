@@ -32,7 +32,7 @@ Parse.Cloud.define("getPosts", function(request, status) {
 
 Parse.Cloud.define("getPlans", function(request, status) {
                    
-                   var Posts = Parse.Object.extend("Plans");
+                   var Posts = Parse.Object.extend("Plan");
                    var query = new Parse.Query(Posts);
                    
                    query.find({

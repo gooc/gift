@@ -43,7 +43,7 @@ app.get('/gift', function(req, res) {
 //Plan
 app.get('/plan', function(req, res) {
         
-        Parse.Cloud.run("getPosts", {}, {
+        Parse.Cloud.run("getPlans", {}, {
                         success: function(results) {
                         res.render('plan', {plans: results});
                         

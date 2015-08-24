@@ -1,1 +1,2 @@
-/config/*
+.parse.local
+.parse.project
