@@ -40,6 +40,19 @@ app.get('/gift', function(req, res) {
   });
 });
 
+//Plan
+app.get('/plan', function(req, res) {
+        
+        Parse.Cloud.run("getPosts", {}, {
+                        success: function(results) {
+                        res.render('plan', {plans: results});
+                        
+                        },
+                        error: function(error) {
+                        res.send("some error");
+                        }
+                        });
+        });
 
 // Attach the Express app to Cloud Code.
 app.listen();
